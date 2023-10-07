@@ -22,7 +22,7 @@ let oauth_token_secret;
 app.get("/", (req, res) => res.status(200).json({ message: '見つかっちゃった' }));
 
 app.get("/auth", async (req, res) => {
-  const authLink = await client.generateAuthLink('https://tweet-youtube-clip-api.onrender.com/callback');
+  const authLink = await client.generateAuthLink('https://temp-tweet-youtube-clip-api.onrender.com/callback');
   oauth_token = authLink.oauth_token;
   oauth_token_secret = authLink.oauth_token_secret;
   console.log(authLink);
