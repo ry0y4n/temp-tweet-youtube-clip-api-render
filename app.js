@@ -67,6 +67,7 @@ app.get("/post", async (req, res) => {
   // もしaccessTokenとaccessSecretが無かったら早々にresponseを返す
   if (!req.query.accessToken || !req.query.accessSecret) {
     res.status(400).json({ message: 'Please pass a accessToken, accessSecret on the query string or in the request body' });
+    return;
   }
   const url = req.query.url;
   console.log(`Video URL: ${url}`);
